@@ -1,6 +1,6 @@
 
 AADNonInteractiveUserSignInLogs
-| where UserPrincipalName contains "jonas.lundmark"
+| where UserPrincipalName contains ""
 | where TimeGenerated > ago(24d)
 | summarize count() by Location, UserPrincipalName, UserAgent
 
