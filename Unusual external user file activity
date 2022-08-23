@@ -1,3 +1,5 @@
 OfficeActivity
 | where TenantId == "dd96d217-8067-4dfd-804d-761e50a6d135"
-| project TenantId, UserAgent, RecordType, ClientIP, Client_IPAddress, Operation, OfficeWorkload
+| project TenantId, UserAgent, RecordType, ClientIP, Client_IPAddress, Operation, OfficeWorkload, TimeGenerated
+| where TimeGenerated > ago(2h)
+| limit 200
