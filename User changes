@@ -1,0 +1,12 @@
+//add member to role
+AuditLogs
+| where OperationName == "Add member to role"
+| where TargetResources contains "name"
+
+//Change user password
+AuditLogs
+| where OperationName == "Change user password"
+| where TargetResources conatins "name"
+
+
+
