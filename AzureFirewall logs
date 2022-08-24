@@ -1,2 +1,2 @@
  AzureDiagnostics
- | where ResourceType == "AZUREFIREWALLS"
+ | where ResourceType == "APPLICATIONGATEWAYS"
