@@ -1,2 +1,3 @@
 AzureDiagnostics
 | where OperationName == "VaultGet"
+| where resource == "Resource"
