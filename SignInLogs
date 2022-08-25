@@ -6,5 +6,4 @@ AADNonInteractiveUserSignInLogs
 
 SigninLogs
 | where UserPrincipalName contains ""
-| where TimeGenerated > ago(30d)
 | project TimeGenerated, ResultType, AlternateSignInName, AuthenticationDetails, AuthenticationRequirement, ClientAppUsed, UserAgent, IPAddress, Location
