@@ -1,2 +1,5 @@
  AzureDiagnostics
  | where clientIP_s contains ""
+ 
+ AzureDiagnostics
+ | where details_data_s contains ""
