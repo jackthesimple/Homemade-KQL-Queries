@@ -1,2 +1,2 @@
  AzureDiagnostics
- | where ResourceType == "APPLICATIONGATEWAYS"
+ | where clientIP_s contains ""
