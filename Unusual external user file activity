@@ -1,4 +1,3 @@
 OfficeActivity
 | where TenantId == "TenantID"
 | project TimeGenerated, TenantId, UserAgent, RecordType, ClientIP, Client_IPAddress, Operation, OfficeWorkload
-
