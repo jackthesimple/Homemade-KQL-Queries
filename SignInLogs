@@ -7,3 +7,7 @@ AADNonInteractiveUserSignInLogs
 SigninLogs
 | where UserPrincipalName contains ""
 | project TimeGenerated, ResultType, AlternateSignInName, AuthenticationDetails, AuthenticationRequirement, ClientAppUsed, UserAgent, IPAddress, Location
+
+//filter based on location and resulttype
+| where Location <> "<location>"
+| where ResultType == "<xxxxxx>" //0 is success, XXXXX is failed, etc.
