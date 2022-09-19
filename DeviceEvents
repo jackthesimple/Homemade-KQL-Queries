@@ -1,0 +1,2 @@
+DeviceEvents
+| project ProcessCommandLine, FileName, FolderPath, TimeGenerated, InitiatingProcessCommandLine, RemoteIP, SHA256, LocalIP
