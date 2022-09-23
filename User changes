@@ -9,4 +9,12 @@ AuditLogs
 | where TargetResources conatins "name"
 
 
+//searching for specific <operationname> with initiated user and target user
+AuditLogs
+| where OperationName == "<opname>"
+| project TargetResources[2].userPrincipalName, parse_json(tostring(InitiatedBy.user)).userPrincipalName, OperationName, TimeGenerated
 
+//searching for <OperationName> on a specific source-identity
+AuditLogs
+| where Identity contains "Gullin"
+| project TargetResources[2].userPrincipalName, parse_json(tostring(InitiatedBy.user)).userPrincipalName, OperationName, TimeGenerated
