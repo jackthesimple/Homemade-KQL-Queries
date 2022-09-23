@@ -18,3 +18,11 @@ AuditLogs
 AuditLogs
 | where Identity contains "Gullin"
 | project TargetResources[2].userPrincipalName, parse_json(tostring(InitiatedBy.user)).userPrincipalName, OperationName, TimeGenerated
+
+
+#User added to Azure Active Directory Privileged Groups
+
+AuditLogs
+| where OperationName == "Add member to role"
+| project TimeGenerated, Result, OperationName, parse_json(tostring(InitiatedBy.user)).userPrincipalName, parse_json(tostring(InitiatedBy.user)).ipAddress, TargetResources[0].userPrincipalName
+

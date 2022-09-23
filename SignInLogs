@@ -11,3 +11,9 @@ SigninLogs
 //filter based on location and resulttype
 | where Location <> "<location>"
 | where ResultType == "<xxxxxx>" //0 is success, XXXXX is failed, etc.
+
+
+// searching for noninteractive signin history with resulttype+CA-status
+AADNonInteractiveUserSignInLogs
+| where UserPrincipalName == <UPN>
+| project ResultType, ConditionalAccessStatus, IPAddress, TimeGenerated, ResultDescription, UserPrincipalName
