@@ -1,0 +1,8 @@
+
+
+
+/// kolla samtliga tabeller nedan en dag i taget
+union DeviceFileEvents, DeviceEvents, DeviceNetworkEvents, DeviceProcessEvents, DeviceLogonEvents
+| where DeviceName contains "xxxxx"
+| where TimeGenerated between (startofday(todatetime("2022-06-21"))..endofday(todatetime("2022-06-21")))
+| sort by TimeGenerated asc
