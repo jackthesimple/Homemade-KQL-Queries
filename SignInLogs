@@ -17,3 +17,10 @@ SigninLogs
 AADNonInteractiveUserSignInLogs
 | where UserPrincipalName == <UPN>
 | project ResultType, ConditionalAccessStatus, IPAddress, TimeGenerated, ResultDescription, UserPrincipalName
+
+// look at signin history with UPN and IPAddress
+SigninLogs
+| where IPAddress in ("90.235.26.229","90.235.26.69","109.189.214.110","95.126.196.48","213.112.17.7","151.236.205.49","90.235.0.83","79.136.127.105","90.235.16.164","90.235.27.54","80.187.121.196","217.213.105.88","37.5.251.92","94.191.153.160","163.116.173.52","128.77.151.226","90.129.202.52","83.252.73.121","2.142.100.19","62.96.27.194","82.196.111.137","95.126.206.186","87.49.216.85","185.180.253.86","90.215.52.140","2.142.235.18","163.116.173")
+| project IPAddress, UserPrincipalName
+| summarize by IPAddress, UserPrincipalName
+| sort by UserPrincipalName asc
