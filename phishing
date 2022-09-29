@@ -1,0 +1,4 @@
+
+//add to security alert...
+| project P1Sender, P2Sender, Recipient, SenderIP, Subject, Files[0].Name,parse_json(tostring(Files[0].FileHashes))[0].Value
+
