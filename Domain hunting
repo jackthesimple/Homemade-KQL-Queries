@@ -1,0 +1,8 @@
+//finding tld's, how often they've been visited
+
+
+Cisco_Umbrella_dns_CL
+| where Domain_s has ".ru"
+| where Policy_Identity_s !has "internal"
+| project Timestamp_t, ExternalIp_s, Domain_s, Action_s, Identities_s
+| summarize count() by Identities_s
